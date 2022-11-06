@@ -19,7 +19,7 @@ player.on('play', function () {
 player.on('timeupdate', throttle(onTimeupdate, 500));
  
 function onTimeupdate (data) {
-    localStorage.setItem(LOCALSTORAGE_KEY, data.seconds)
+    localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(data.seconds))
 };
 
 player.setCurrentTime(localStorage.getItem(LOCALSTORAGE_KEY)).then((seconds) => {
