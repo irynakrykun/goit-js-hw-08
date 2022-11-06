@@ -17,20 +17,21 @@ function onFormInput(e) {
     object.emailEl = emailEl.value;
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(object) );
          
-}
+};
 function onFormSubmit(e) {
     e.preventDefault();
     e.target.reset();
-    console.log(e.target)
+    console.log(e.target);
     localStorage.removeItem(LOCALSTORAGE_KEY);
-    console.log(object)
-}
+    console.log(object);
+};
 
 function onUpdatePage() {
     const saveValue = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
     
     if ( saveValue ) {
-        textareaEl.value = saveValue.textarea
-        emailEl.value = saveValue.email
+        textareaEl.value = saveValue.textarea;
+        emailEl.value = saveValue.email;
     }
-}
+};
+onUpdatePage()
